@@ -1,0 +1,29 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        interval = 5
+}
+order += "disk /"
+order += "memory"
+order += "tztime local"
+
+disk "/" {
+        format = "  %used / %total "
+}
+
+memory {
+        format = "  %used / %total "
+        threshold_degraded = "10%"
+	threshold_critical = "5%"
+}
+
+tztime local {
+        format = "  %a, %b %d - %l:%M %P "
+}
